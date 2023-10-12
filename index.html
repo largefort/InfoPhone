@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Device Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #deviceInfo {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="deviceInfo">
+        <h2>Mobile Device Information</h2>
+        <p><strong>Device Name:</strong> <span id="deviceName"></span></p>
+        <p><strong>Device Model:</strong> <span id="deviceModel"></span></p>
+        <p><strong>OS Name:</strong> <span id="osName"></span></p>
+        <p><strong>OS Version:</strong> <span id="osVersion"></span></p>
+        <p><strong>Screen Resolution:</strong> <span id="screenResolution"></span></p>
+        <p><strong>Viewport Width:</strong> <span id="viewportWidth"></span></p>
+        <p><strong>Viewport Height:</strong> <span id="viewportHeight"></span></p>
+        <p><strong>Device Type:</strong> <span id="deviceType"></span></p>
+        <p><strong>Browser Name:</strong> <span id="browserName"></span></p>
+        <p><strong>Browser Version:</strong> <span id="browserVersion"></span></p>
+    </div>
+
+    <script>
+        document.getElementById("deviceName").textContent = navigator.vendor;
+        document.getElementById("deviceModel").textContent = navigator.product;
+        document.getElementById("osName").textContent = navigator.platform;
+        document.getElementById("osVersion").textContent = navigator.userAgent;
+        document.getElementById("screenResolution").textContent = window.screen.width + "x" + window.screen.height;
+        document.getElementById("viewportWidth").textContent = window.innerWidth;
+        document.getElementById("viewportHeight").textContent = window.innerHeight;
+        document.getElementById("deviceType").textContent = navigator.userAgent.includes("Mobile") ? "Mobile" : "Desktop";
+        document.getElementById("browserName").textContent = navigator.appName;
+        document.getElementById("browserVersion").textContent = navigator.appVersion;
+    </script>
+</body>
+</html>

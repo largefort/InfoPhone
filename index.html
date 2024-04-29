@@ -3,16 +3,56 @@
 <head>
     <title>Mobile Device Information</title>
     <style>
+        /* General body styles */
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
+
+        /* Card style for device information */
         #deviceInfo {
-            border: 1px solid #ccc;
-            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 40px;
             margin: 20px;
-            max-width: 400px;
-            margin: 0 auto;
+            width: 90%;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        h2 {
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        strong {
+            color: #333;
+        }
+
+        span {
+            color: #555;
+        }
+
+        @media (max-width: 600px) {
+            #deviceInfo {
+                padding: 20px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -32,10 +72,10 @@
     </div>
 
     <script>
-        document.getElementById("deviceName").textContent = navigator.vendor;
-        document.getElementById("deviceModel").textContent = navigator.product;
-        document.getElementById("osName").textContent = navigator.platform;
-        document.getElementById("osVersion").textContent = navigator.userAgent;
+        document.getElementById("deviceName").textContent = navigator.vendor || 'N/A';
+        document.getElementById("deviceModel").textContent = navigator.product || 'N/A';
+        document.getElementById("osName").textContent = navigator.platform || 'N/A';
+        document.getElementById("osVersion").textContent = navigator.userAgent || 'N/A';
         document.getElementById("screenResolution").textContent = window.screen.width + "x" + window.screen.height;
         document.getElementById("viewportWidth").textContent = window.innerWidth;
         document.getElementById("viewportHeight").textContent = window.innerHeight;
@@ -45,3 +85,4 @@
     </script>
 </body>
 </html>
+
